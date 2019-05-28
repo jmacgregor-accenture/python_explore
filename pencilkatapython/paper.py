@@ -17,10 +17,15 @@ class Paper:
         lengthToReplace = len(stringToClear)
         start = self.content[:replaceStart]
         end = self.content[(replaceStart + lengthToReplace):]
-        middle = ""
+        whitespace = self._createWhiteSpace(lengthToReplace)
+
+        self.content = F"{start}{whitespace}{end}"
+
+    def _createWhiteSpace(self, lengthOfWhiteSpace):
+        whitespace = ""
         count = 0
-        while count < lengthToReplace:
-            middle += " "
+        while count < lengthOfWhiteSpace:
+            whitespace += " "
             count += 1
 
-        self.content = F"{start}{middle}{end}"
+        return whitespace
