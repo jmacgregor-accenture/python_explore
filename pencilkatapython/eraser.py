@@ -4,4 +4,5 @@ class Eraser():
         self.durability = startDurability
 
     def erase(self, itemToErase):
-        self.durability -= 1
+        if itemToErase.isspace() == False:
+            self.durability -= 1
