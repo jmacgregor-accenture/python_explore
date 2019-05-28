@@ -11,3 +11,16 @@ class Paper:
 
     def addPencil(self, pencil):
         self.pencil = pencil
+
+    def erase(self, stringToClear):
+        replaceStart = self.content.rfind(stringToClear)
+        lengthToReplace = len(stringToClear)
+        start = self.content[:replaceStart]
+        end = self.content[(replaceStart + lengthToReplace):]
+        middle = ""
+        count = 0
+        while count < lengthToReplace:
+            middle += " "
+            count += 1
+
+        self.content = F"{start}{middle}{end}"
