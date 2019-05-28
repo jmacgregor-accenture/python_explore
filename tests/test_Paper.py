@@ -1,4 +1,5 @@
 from pencilkatapython.paper import Paper
+from pencilkatapython.pencil import Pencil
 
 def test_PaperExists():
     paper = Paper()
@@ -27,3 +28,22 @@ def test_WriteAppendsStringToContent():
     paper.write(testTwo)
 
     assert paper.content == F"{testOne}{testTwo}"
+
+def test_paperCanAddPencil():
+    pencil = Pencil(5)
+    paper = Paper()
+
+    paper.addPencil(pencil)
+
+    assert paper.pencil is not None
+
+def test_dullPencilOnlyAddsWhitespace():
+    pencil = Pencil(5)
+    paper = Paper()
+    paper.addPencil(pencil)
+    testString = "Bow wow"
+    expectedString = "Bow w  "
+
+    paper.write(testString)
+
+    assert paper.content == expectedString
