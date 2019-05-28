@@ -51,3 +51,13 @@ def test_sharpeningPencilReducesLength():
     pencil.sharpen()
 
     assert pencil.length == testLength - 1
+
+def test_sharpeningPencilRestoresDurability():
+    testDurability = 5
+    testLength = 3
+    pencil = Pencil(testDurability, testLength)
+    pencil.write("boo")
+
+    pencil.sharpen()
+
+    assert pencil.durability == testDurability

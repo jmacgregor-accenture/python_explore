@@ -1,7 +1,8 @@
 class Pencil:
 
     def __init__(self, startDurability, startLength):
-        self.durability = startDurability
+        self.startDurability = startDurability
+        self.durability = self.startDurability
         self.length = startLength
 
     def write(self, input):
@@ -16,3 +17,4 @@ class Pencil:
 
     def sharpen(self):
         self.length -= 1
+        self.durability = self.startDurability
