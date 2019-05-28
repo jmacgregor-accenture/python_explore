@@ -13,3 +13,6 @@ class Pencil:
 
                 self.durability -= 1
             count += 1
+
+    def sharpen(self):
+        self.length -= 1
