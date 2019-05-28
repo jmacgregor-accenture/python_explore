@@ -1,7 +1,8 @@
 class Pencil:
 
-    def __init__(self, startDurability):
+    def __init__(self, startDurability, startLength):
         self.durability = startDurability
+        self.length = startLength
 
     def write(self, input):
         count = 0

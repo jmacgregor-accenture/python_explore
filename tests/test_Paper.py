@@ -15,7 +15,7 @@ def test_PaperHasEmptyContent():
 def test_WriteAddsStringToContent():
     testString = "string"
     paper = Paper()
-    pencil = Pencil(25)
+    pencil = Pencil(25, 0)
 
     paper.write(testString, pencil)
 
@@ -25,7 +25,7 @@ def test_WriteAppendsStringToContent():
     testOne = "test"
     testTwo = " two"
     paper = Paper()
-    pencil = Pencil(25)
+    pencil = Pencil(25, 0)
 
     paper.write(testOne, pencil)
     paper.write(testTwo, pencil)
@@ -33,7 +33,7 @@ def test_WriteAppendsStringToContent():
     assert paper.content == F"{testOne}{testTwo}"
 
 def test_paperCanAddPencil():
-    pencil = Pencil(5)
+    pencil = Pencil(5, 0)
     paper = Paper()
 
     paper.addPencil(pencil)
@@ -41,7 +41,7 @@ def test_paperCanAddPencil():
     assert paper.pencil is not None
 
 def test_dullPencilOnlyAddsWhitespace():
-    pencil = Pencil(5)
+    pencil = Pencil(5, 0)
     paper = Paper()
     testString = "Bow wow"
     expectedString = "Bow w  "
