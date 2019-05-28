@@ -60,3 +60,15 @@ def test_eraseStringRemovesLastInstanceOfStringFromContent():
     paper.erase("taco")
 
     assert paper.content == expectedString
+
+def test_eraseStringRemovesTwoInstancesOfStringFromContent():
+    pencil = Pencil(25,0)
+    paper = Paper()
+    testString = "taco taco taco"
+    expectedString = "taco          "
+    paper.write(testString, pencil)
+
+    paper.erase("taco")
+    paper.erase("taco")
+
+    assert paper.content == expectedString
