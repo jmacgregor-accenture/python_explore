@@ -15,6 +15,7 @@ class Paper:
     def erase(self, stringToClear):
         replaceStart = self.content.rfind(stringToClear)
         lengthToReplace = len(stringToClear)
+        
         start = self.content[:replaceStart]
         end = self.content[(replaceStart + lengthToReplace):]
         whitespace = self._createWhiteSpace(lengthToReplace)
