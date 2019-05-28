@@ -1,0 +1,1 @@
+This is just an implementation of the Pencil Durability Kata to get my head around some python concepts
