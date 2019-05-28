@@ -16,5 +16,6 @@ class Pencil:
             count += 1
 
     def sharpen(self):
-        self.length -= 1
-        self.durability = self.startDurability
+        if self.length > 0:
+            self.length -= 1
+            self.durability = self.startDurability
